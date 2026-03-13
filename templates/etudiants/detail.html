@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Détail Étudiant{% endblock %}
+
+{% block content %}
+<h2>Détails de l'étudiant</h2>
+{% if etudiant.photo %}
+<img src="{{ etudiant.photo.url }}" width="150" class="rounded shadow mb-3">
+{% endif %}
+<ul class="list-group">
+
+<li class="list-group-item"><b>Matricule:</b> {{ etudiant.matricule }}</li>
+<li class="list-group-item"><b>Nom:</b> {{ etudiant.nom }}</li>
+<li class="list-group-item"><b>Prénom:</b> {{ etudiant.prenom }}</li>
+<li class="list-group-item"><b>Email:</b> {{ etudiant.email }}</li>
+<li class="list-group-item"><b>Téléphone:</b> {{ etudiant.telephone }}</li>
+<li class="list-group-item"><b>Adresse:</b> {{ etudiant.adresse }}</li>
+
+</ul>
+
+<a href="{% url 'liste_etudiants' %}" class="btn btn-secondary mt-3">Retour</a>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+/* Background full-page pou hero section */
+.hero-background {
+    background-image: url("../images/staff.jpeg"); /* chemen imaj ou */
+    background-size: cover;        /* fè imaj la kouvri tout espas la */
+    background-position: center;   /* mete imaj la nan mitan */
+    background-repeat: no-repeat;
+
+    width: 100%;                   /* pran tout lajè ekran an */
+    height: 100vh;                 /* pran tout wotè ekran an */
+    display: flex;                 /* pou alinye tèks la fasil */
+    flex-direction: column;
+    align-items: center;           /* tèks nan mitan orizontal */
+    justify-content: center;       /* tèks nan mitan vètikal */
+    text-align: center;
+
+    color: white;                  /* tèks blan */
+    
+    /* Overlay transparan pou fè tèks la pi fasil li */
+    background-color: rgba(0,0,0,0.3);  
+    background-blend-mode: darken;
+    padding: 20px;
+}
+
+
+/* Uniform styling for About section images */
+.about-photo {
+    width: 100%;
+    max-width: 400px;  /* ensures images aren’t too large */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    object-fit: cover;
+}
+
+/* Text styling */
+.container h2, .container h3 {
+    color: #003366; /* dark blue for your theme */
+}
+
+.container p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+footer {
+    background-color: #0d6efd; /* same as Bootstrap primary / navbar */
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffd633; /* subtle hover highlight */
+}
+
+footer hr {
+    margin: 1rem 0;
+    border-color: #cfe2ff; /* light line matching theme */
+}

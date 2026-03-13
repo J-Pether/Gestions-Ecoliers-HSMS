@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Modifier Étudiant{% endblock %}
+
+{% block content %}
+
+<h2>Modifier Étudiant</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-warning">
+        Enregistrer les modifications
+    </button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+<form method="post">
+{% csrf_token %}
+
+<label>Étudiant</label>
+<select name="etudiant" class="form-control">
+
+{% for etudiant in etudiants %}
+<option value="{{ etudiant.id }}">
+{{ etudiant.prenom }} {{ etudiant.nom }}
+</option>
+{% endfor %}
+
+</select>
+
+<br>
+
+<label>Cours</label>
+<select name="cours" class="form-control">
+
+{% for c in cours %}
+<option value="{{ c.id }}">
+{{ c.nom }}
+</option>
+{% endfor %}
+
+</select>
+
+<br>
+
+<button class="btn btn-success">
+Enregistrer
+</button>
+
+</form>

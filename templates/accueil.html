@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+<!-- {% load static %} -->
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<div class="row align-items-center">
+
+    
+
+   <div class="hero-background d-flex align-items-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Bienvenue sur votre espace de Gestion des Ecoliers</h1>
+        <p class="lead text-white fw-bold display-4">Gérez efficacement vos Ecoliers, cours et inscriptions en un seul endroit.</p>
+        <!-- bouton login/register -->
+    </div>
+    
+</div>
+        {% if not user.is_authenticated %}
+            <a href="{% url 'register' %}" class="btn btn-primary btn-lg">
+                <i class="fas fa-user-plus"></i> Commencer maintenant
+            </a>
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-lg ms-2">
+                <i class="fas fa-sign-in-alt"></i> Se connecter
+            </a>
+        {% else %}
+            <a href="{% url 'dashboard' %}" class="btn btn-primary btn-lg">
+                <i class="fas fa-tachometer-alt"></i> Aller au Dashboard
+            </a>
+        {% endif %}
+    </div>
+    <!-- <div class="col-md-6 hero-background"></div> -->
+     
+</div>
+
+<!-- ==================== ABOUT THE SCHOOL SECTION ==================== -->
+<div class="container my-5">
+    <div class="row align-items-center mb-4">
+        <!-- Left photo -->
+        <div class="col-md-6 mb-3 mb-md-0 text-center">
+            <img src="{% static 'images/etudiant.jpeg' %}" alt="School Building" class="about-photo">
+        </div>
+
+        <!-- Right text -->
+        <div class="col-md-6">
+            <h2>À propos de notre école</h2>
+            <p>
+                Notre école est bilingue, enseignant à la fois en anglais et en français pour préparer les étudiants à
+                devenir des citoyens compétents et confiants dans les deux langues. Nous mettons l’accent sur la
+                compréhension, l’expression orale et la réussite académique.
+            </p>
+            <p>
+                Nous utilisons le programme éducatif américain <strong>Abeka</strong>, reconnu pour son approche
+                complète et structurée. Ce programme fournit des manuels et des ressources de qualité.
+            </p>
+        </div>
+    </div>
+
+    <div class="row align-items-center">
+        <!-- Left text for books -->
+        <div class="col-md-6 order-md-2 mb-3 mb-md-0">
+            <h3>Quelques-uns des livres du programme Abeka</h3>
+            <p>
+                Les livres du programme Abeka couvrent tous les niveaux scolaires et offrent des activités
+                interactives et des exercices complets pour renforcer l’apprentissage.
+            </p>
+        </div>
+
+        <!-- Right photo -->
+        <div class="col-md-6 order-md-1 text-center">
+            <img src="{% static 'images/livres.jpeg' %}" alt="Abeka Books" class="about-photo">
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                <h3>Gestion des Ecoliers</h3>
+                <p>Ajoutez, modifiez et consultez les informations des étudiants.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-book fa-3x text-success mb-3"></i>
+                <h3>Gestion des Cours</h3>
+                <p>Créez et gérez les différents cours disponibles.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-clipboard-check fa-3x text-info mb-3"></i>
+                <h3>Inscriptions</h3>
+                <p>Inscrivez les écoliers aux cours et suivez leurs notes.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

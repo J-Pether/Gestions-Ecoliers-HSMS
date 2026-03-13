@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">Tableau de Bord</h2>
+
+<div class="row g-4"> <!-- g-4 ajoute un espace uniforme entre les colonnes -->
+
+    <!-- ETUDIANTS -->
+    <div class="col-md-4">
+        <a href="{% url 'liste_etudiants' %}" class="text-decoration-none">
+            <div class="card text-white bg-primary h-100">
+                <div class="card-body text-center d-flex flex-column justify-content-center">
+                    <h5 class="card-title">Étudiants</h5>
+                    <h2 class="display-4">{{ total_etudiants }}</h2>
+                    <p>Total des étudiants enregistrés</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- COURS -->
+    <div class="col-md-4">
+        <a href="{% url 'liste_cours' %}" class="text-decoration-none">
+            <div class="card text-white bg-success h-100">
+                <div class="card-body text-center d-flex flex-column justify-content-center">
+                    <h5 class="card-title">Cours</h5>
+                    <h2 class="display-4">{{ total_cours }}</h2>
+                    <p>Total des cours disponibles</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- INSCRIPTIONS -->
+    <div class="col-md-4">
+        <a href="{% url 'liste_inscriptions' %}" class="text-decoration-none">
+            <div class="card text-white bg-warning h-100">
+                <div class="card-body text-center d-flex flex-column justify-content-center">
+                    <h5 class="card-title">Inscriptions</h5>
+                    <h2 class="display-4">{{ total_inscriptions }}</h2>
+                    <p>Total des inscriptions</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}
